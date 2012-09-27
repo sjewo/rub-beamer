@@ -20,11 +20,14 @@ Die Vorlage kann einfach über den Befehl `\usetheme[optionen]{Rub}` eingebunden
 
 Es gibt drei Varianten für die Titelseite, die über ein optionales Argument ausgewählt werden können:
 * alternativetitlepage=bild
- ![Titelseite bild](www.stat.rub.de/latex/bild.png)
+
+ ![Titelseite bild](http://www.stat.rub.de/latex/bild.png)
 * alternativetitlepage=normal
- ![Titelseite normal](www.stat.rub.de/latex/normal.png)
+
+ ![Titelseite normal](http://www.stat.rub.de/latex/normal.png)
 * alternativetitlepage=alternativ
- ![Titelseite alternativ](www.stat.rub.de/latex/alternativ.png)
+
+ ![Titelseite alternativ](http://www.stat.rub.de/latex/alternativ.png)
 
 Zusätzlich beinhaltet die Vorlage noch einen "aufgeräumten" Modus:
 * `alternativetitlepage=bildempty`, ist eine Titelseite, bei der der Text direkt über das Hintergrundbild gelegt wird.
