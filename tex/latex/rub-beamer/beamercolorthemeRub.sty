@@ -1,0 +1,76 @@
+% Copyright 2007 by Till Tantau
+% Edited by Sebastian Jeworutzki 2012
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackage{beamercolorthemeRub}[27/09/12 15:22:18]
+
+% Paket graphicx laden 
+\RequirePackage{graphicx}
+
+% Farben definieren
+\definecolor{gelbgruen}{cmyk}{0.5,0,1,0}
+\definecolor{lichtgrau}{cmyk}{0.03,0.03,0.03,0.1}
+\definecolor{saphierblau}{cmyk}{1,0.5,0,.6}
+\definecolor{alertred}{rgb}{0.80,0.12,0.12}
+
+% Farben für den Präsentationsmodus
+\mode<presentation>
+
+% Farben den Strukturelementen zuordnen
+\setbeamercolor*{Title bar}{bg=white, fg=saphierblau}
+\setbeamercolor*{frametitle}{parent=Title bar}
+\setbeamercolor*{framesubtitle}{fg=saphierblau}
+
+\setbeamercolor*{block title}{bg=saphierblau,fg=white}
+\setbeamercolor*{block body}{bg=saphierblau!15,fg=black}
+\setbeamercolor{block title alerted}{bg=alertred, fg=white}
+\setbeamercolor{block body alerted}{bg=alertred!15,fg=black}
+\setbeamercolor{block title example}{bg=gelbgruen, fg=white}
+\setbeamercolor{block body example}{bg=gelbgruen!15,fg=black}
+
+
+% Titelseite
+\setbeamercolor*{title page}{fg=saphierblau}
+\setbeamercolor*{title}{fg=saphierblau}
+\setbeamercolor*{kopf}{fg=black, bg=lichtgrau}
+\setbeamercolor*{titlegraphic}{fg=saphierblau, bg=lichtgrau}
+\setbeamercolor*{date}{fg=gelbgruen}
+
+% Weitere Textelemente
+\setbeamercolor{example text}{fg=gelbgruen!50!black}
+\setbeamercolor*{alerted text}{fg=alertred}
+
+% Alle Strukturierungselemente wie Aufzählungzeichen in saphierblau
+\usecolortheme[named=saphierblau]{structure}
+
+% Farben für Handouts
+\mode<handout>
+% Bei Handout Hintergrundfarbe auf weiß setzten
+\setbeamercolor*{normal text}{fg=saphierblau,bg=white} %Hintergrund
+\setbeamercolor*{Location bar}{fg=saphierblau,bg=white} %Fußzeile
+\setbeamercolor*{block title}{fg=saphierblau,bg=white}
+\setbeamercolor*{block body}{bg=white,fg=saphierblau}
+\setbeamercolor*{block title alerted}{bg=alertred, fg=white}
+\setbeamercolor*{block body alerted}{bg=alertred!15,fg=saphierblau}
+\setbeamercolor*{block title example}{bg=gelbgruen, fg=white}
+\setbeamercolor*{block body example}{bg=gelbgruen!15,fg=saphierblau}
+
+\mode
+<all>
+
+% Farben für den „aufgeräumten Modus“
+\ifbeamer@empty
+\setbeamercolor{normal text}{fg=saphierblau,bg=white}
+\setbeamercolor*{Location bar}{fg=saphierblau,bg=white}
+\setbeamercolor*{section in head/foot}{fg=saphierblau,bg=white} 
+\else
+\setbeamercolor{normal text}{fg=saphierblau,bg=lichtgrau}
+\setbeamercolor*{Location bar}{fg=saphierblau,bg=lichtgrau}
+\setbeamercolor*{section in head/foot}{fg=saphierblau,bg=lichtgrau} 
+\fi
+
