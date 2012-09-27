@@ -1,0 +1,135 @@
+% Copyright 2007 by Till Tantau
+% Edited by Sebastian Jeworutzki 2012
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackage{beamerthemeRub}[27/09/12 15:37:39]
+
+
+\mode<presentation>
+
+% Optionen entgegennehmen und an beamerinnertheme weitergeben, um die Art der Titelseite auszuwählen
+\DeclareOptionBeamer{height}{\PassOptionsToPackage{height=#1}{beamerouterthemesidebar}}
+\DeclareOptionBeamer{alternativetitlepage}[normal]{\PassOptionsToPackage{alternativetitlepage=#1}{beamerinnerthemeRub}}
+\DeclareOptionBeamer{print}{\PassOptionsToPackage{print=#1}{}}
+
+% Option für empty (aufgeräumten) Modus
+\newif\ifbeamer@empty
+\beamer@emptyfalse
+\DeclareOptionBeamer{empty}{\beamer@emptytrue}
+
+% Option für Gliederungspunkte unter Überschrift
+\newif\ifbeamer@section
+\beamer@sectionfalse
+\DeclareOptionBeamer{section}{\beamer@sectiontrue}
+\ProcessOptionsBeamer
+
+% Einzelne Thema-Elemente laden 
+\useoutertheme{Rub}
+\useinnertheme{Rub}
+\usecolortheme{Rub}
+\usefonttheme{Rub}
+
+% Einstellungen für einzelne Elemente
+\setbeamertemplate{blocks}[]
+\setbeamercovered{transparent}
+
+% Navigationssymbole ausblenden
+\setbeamertemplate{navigation symbols}{}
+
+% Den deutschen Captiontext abkürzen
+\AtBeginDocument{%
+  \renewcommand{\figurename}{Abb.}%
+  \renewcommand{\tablename}{Tab.}%
+ }
+
+% Kleinere Bildunterschriften
+\setbeamertemplate{caption}{\small {\color{saphierblau}\insertcaptionname} \insertcaption   }
+
+% Seitenränder allgemein
+\setbeamersize{text margin left=5mm,
+               text margin right=5mm} 
+
+% Seiteneinrichtung für die Frame-Optionen t,b,c
+\define@key{beamerframe}{b}[true]{% bottom
+  \beamer@frametopskip=10mm plus 1fill\relax%
+  \beamer@framebottomskip=1mm\relax%
+  \beamer@frametopskipautobreak=\beamer@frametopskip\relax%
+  \beamer@framebottomskipautobreak=\beamer@framebottomskip\relax%
+  \def\beamer@initfirstlineunskip{}%
+}
+\define@key{beamerframe}{t}[true]{% top
+  \beamer@frametopskip=11mm\relax%
+  \beamer@framebottomskip=0mm plus 1fill\relax%
+  \beamer@frametopskipautobreak=0cm\relax%
+  \beamer@framebottomskipautobreak=\beamer@framebottomskip\relax%
+  \def\beamer@initfirstlineunskip{%
+    \def\beamer@firstlineitemizeunskip{%
+     % \vskip-\partopsep\vskip-\topsep\vskip-\parskip%
+      \global\let\beamer@firstlineitemizeunskip=\relax}%
+    \everypar{\global\let\beamer@firstlineitemizeunskip=\relax}}
+}
+\define@key{beamerframe}{c}[true]{% bottom
+  \beamer@frametopskip=10mm plus 1fill\relax%
+  \beamer@framebottomskip=0mm plus 1fill\relax%
+  \beamer@frametopskipautobreak=\beamer@frametopskip\relax%
+  \beamer@framebottomskipautobreak=\beamer@framebottomskip\relax%
+  \def\beamer@initfirstlineunskip{}%
+}
+
+% Tabellenlinien und farbig hinterlegt Tabellenüberschriften
+\RequirePackage{booktabs}
+\RequirePackage{colortbl}
+\RequirePackage{array}
+\arrayrulecolor{saphierblau}
+\newcolumntype{+}{>{\global\let\currentrowstyle\relax}}
+\newcolumntype{^}{>{\currentrowstyle}}
+\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}%
+#1\ignorespaces
+}
+\newcommand{\thead}{\rowstyle{\bfseries}}
+
+% Anpassung Inhaltsverzeichnis
+\def\sectionintoc{}
+\def\beamer@sectionintoc#1#2#3#4#5{%
+  \ifnum\c@tocdepth>0%
+  \ifnum#4=\beamer@showpartnumber%
+  {
+  \beamer@saveanother%
+  \gdef\beamer@todo{}%
+  \beamer@slideinframe=#1\relax%
+  \expandafter\only\beamer@tocsections{\gdef\beamer@todo{%
+      \beamer@tempcount=#5\relax%
+      \advance\beamer@tempcount by\beamer@sectionadjust%
+      \edef\inserttocsectionnumber{\the\beamer@tempcount}%
+      \def\inserttocsection{\hyperlink{Navigation#3}{#2}}%
+      \beamer@tocifnothide{\ifnum\c@section=#1\beamer@toc@cs\else\beamer@toc@os\fi}%
+      {
+        \ifbeamer@pausesections\pause\fi%
+        \ifx\beamer@toc@ooss\beamer@hidetext
+          \vskip0.5em       % hier ist der Abstand zwischen den Einträgen definiert
+        \else
+          \vfill
+        \fi
+        {%
+          \hbox{\vbox{%
+              \def\beamer@breakhere{\\}%
+              \beamer@tocact{\ifnum\c@section=#1\beamer@toc@cs\else\beamer@toc@os\fi}{section in toc}}}%
+         \par%
+        }%
+      }%
+    }
+  }%
+  \beamer@restoreanother%
+  }
+  \beamer@todo%
+  \fi\fi%
+}
+
+\mode
+<all>
+
