@@ -1,0 +1,104 @@
+% Copyright 2007 by Till Tantau
+% Edited by Sebastian Jeworutzki 2012
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+%
+% See the file doc/licenses/LICENSE for more details.
+
+\ProvidesPackage{beamerouterthemeRub}[27/09/12 15:35:45]
+
+% Tikz wird benötigt
+\RequirePackage{tikz}
+
+% Einige benötigte Längenvariablen erzeugen
+\newdimen\beamer@Rubwidth
+\newdimen\beamer@headheight
+\beamer@headheight=0.17\paperheight
+
+\mode<presentation>
+
+\defbeamertemplate*{frametitle}{Rub theme}
+  {%
+  \begin{tikzpicture}[remember picture, overlay]
+  % Erste Node: Setzt ganz oben links an, von dem Punkt aus kann dann in der zweiten tikzpicture Umgebung ausgegangen werden
+\node[anchor=north west, inner sep=0pt]  at (current page.north west) {
+    \begin{tikzpicture}[remember picture,overlay]
+    % Wegen der Maße werden die Bilder in der picture Umgebung definiert
+    \pgfdeclareimage[height=0.10\paperheight]{logo}{logo}
+    \pgfdeclareimage[width=0.18\paperwidth]{wortmarke}{wortmarke}
+    % Weißer Hintergrund für den Frame Title
+    \draw[anchor=north west, inner sep=0pt,style={white, line width=0pt, fill=white}] (current page.north west)
+    rectangle (0.9\paperwidth,-0.16\paperheight);
+
+    % Logo oben
+    \ifbeamer@empty % Nicht im Empty-Modus ausführen
+    \else
+    \node[anchor=north east,xshift=-0.05\paperwidth, rectangle, inner sep=0pt, yshift=1pt] at (current page.north east) {\pgfuseimage{logo}};
+    % Wortmarke oben
+    \node[anchor=west,xshift=0.03\paperwidth,yshift=-0.03\paperheight, rectangle, inner sep=0pt] at (current page.north west) {\pgfuseimage{wortmarke}};
+    \fi
+    % Node mit dem Text
+    \node[anchor=north west,xshift=0.03\paperwidth,yshift=-0.06\paperheight, rectangle, inner sep=0pt] at (current page.north west) {
+        \begin{minipage}{0.82\paperwidth}
+          % Institute ist überflüssig
+          %\ifx\insertinstitute\@empty%
+          % \else%
+          %  \usebeamerfont{head institute}\insertinstitute\\[0.7em]
+          % \fi%
+          % \usebeamerfont{head author}\insertauthor
+          \usebeamerfont*{frametitle}\color{saphierblau}{\textbf{\insertframetitle}}
+              \ifx\insertframesubtitle\@empty%
+              \else%              
+                  \usebeamerfont*{framesubtitle}\color{saphierblau}{\insertframesubtitle}
+              \fi% 
+         \ifbeamer@section
+            \par
+            \usebeamerfont{section in head/foot} \insertsubsectionhead
+         \fi
+         \end{minipage}};
+         \end{tikzpicture}};
+\end{tikzpicture}
+  }
+
+
+
+\defbeamertemplate*{headline}{Rub theme}
+  {%
+  % Hier ist Platz für eine Headline über dem Frametitle
+  % Beispielsweise für den aktuellen Gliederungspunkt etc..
+  }
+
+
+% Fußzeile
+\defbeamertemplate*{footline}{Rub theme}
+{
+    \ifbeamer@empty % Nicht im Empty-Modus ausführen
+        \linethickness{0pt}
+        \framelatex{
+            \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.3\beamer@headheight,sep=0.1cm]{section in head/foot}    
+                \usebeamerfont{section in head/foot}%
+                \hfill
+                \insertframenumber%$|$\inserttotalframenumber
+            \end{beamercolorbox}}
+    \else
+        \linethickness{0pt}
+        \framelatex{
+            \begin{beamercolorbox}[leftskip=.3cm,wd=\paperwidth,ht=0.3\beamer@headheight,sep=0.1cm]{section in head/foot}    
+                \usebeamerfont{section in head/foot}%
+                \insertshortauthor~$|$~\insertshorttitle~$|$~\insertdate
+                \hfill
+                \insertframenumber%$|$\inserttotalframenumber
+            \end{beamercolorbox}}
+    \fi
+}
+
+% Im Empty-Modus ausführen
+ \ifbeamer@empty
+ \fi
+
+\mode
+<all>
+
+
