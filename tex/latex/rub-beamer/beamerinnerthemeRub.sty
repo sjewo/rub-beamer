@@ -532,130 +532,58 @@
 
 
 % Blocks
-
 \defbeamertemplate*{block begin}{Rub}
 {
-\par\vskip\medskipamount
-% Tikz style for block
-\usetikzlibrary{shapes.multipart}
-\usetikzlibrary{fadings}
-\tikzstyle{beamer block}=[draw=saphierblau, 
-                   rounded corners=0.5pt, 
-                   fill=saphierblau!20!white,
-                   inner sep=7pt,  
-                   rectangle split,
-                   rectangle split parts=2,
-                   rectangle split draw splits=false,
-                   text width=0.95\textwidth]
-                   
-\tikzstyle{beamer block rule}=[fill=saphierblau!66!white, 
-                    path fading=east, 
-                    text width=0.6\textwidth, 
-                    minimum height=0.5pt, 
-                    inner sep=0pt, 
-                    anchor=center, 
-                    xshift=7pt, 
-                    yshift=0.35em, 
-                    rounded corners=0.5pt, 
-                     anchor=west]
-\begin{tikzpicture}
-    \node[beamer block] (block) \bgroup
-    \bfseries \insertblocktitle
-    \nodepart{two} 
-    \begin{minipage}{\textwidth}
-    \vspace{-0.3em}
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=.75ex]{block title}
+    \usebeamerfont*{block title}\insertblocktitle%
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{block title}
+  {}
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[colsep*=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
 }
 \defbeamertemplate*{block end}{Rub}  
-{
-    \end{minipage}
-    \egroup;
-    \node[beamer block rule] at (block.text split west) {};
-\end{tikzpicture}
-\vskip\smallskipamount
-}
+{\end{beamercolorbox}\vskip\smallskipamount}
 
 \defbeamertemplate*{block alerted begin}{Rub}
 {
-\par\vskip\medskipamount
-% Tikz style for block
-\usetikzlibrary{shapes.multipart}
-\usetikzlibrary{fadings}
-\tikzstyle{beamer block}=[draw=saphierblau, 
-                   rounded corners=0.5pt, 
-                   fill=red!20!white,
-                   inner sep=7pt,  
-                   rectangle split,
-                   rectangle split parts=2,
-                   rectangle split draw splits=false,
-                   text width=0.95\textwidth]
-                   
-\tikzstyle{beamer block rule}=[fill=saphierblau!66!white, 
-                    path fading=east, 
-                    text width=0.6\textwidth, 
-                    minimum height=0.5pt, 
-                    inner sep=0pt, 
-                    anchor=center, 
-                    xshift=7pt, 
-                    yshift=0.35em, 
-                    rounded corners=0.5pt,
-                    anchor=west]
-                    
-\begin{tikzpicture}
-    \node[beamer block] (block) \bgroup
-    \bfseries \insertblocktitle
-    \nodepart{two} 
-    \begin{minipage}{\textwidth}
-    \vspace{-0.3em}
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=.75ex]{block title alerted}
+    \usebeamerfont*{block title alerted}\insertblocktitle%
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{block title alerted}
+  {}
+  {\ifbeamercolorempty[bg]{block body alerted}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body alerted}%
+  \begin{beamercolorbox}[colsep*=.75ex,vmode]{block body alerted}%
+    \ifbeamercolorempty[bg]{block body alerted}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
 }
+
 \defbeamertemplate*{block alerted end}{Rub}
-{    \end{minipage}
-    \egroup;
-    \node[beamer block rule] at (block.text split west) {};
-\end{tikzpicture}
-\vskip\smallskipamount
-}
+{\end{beamercolorbox}\vskip\smallskipamount}
+
 
 \defbeamertemplate*{block example begin}{Rub}
 {
-    \par\vskip\medskipamount
-% Tikz style for block
-\usetikzlibrary{shapes.multipart}
-\usetikzlibrary{fadings}
-\tikzstyle{beamer block}=[draw=saphierblau, 
-                   rounded corners=0.5pt, 
-                   fill=gelbgruen!20!white,
-                   inner sep=7pt,  
-                   rectangle split,
-                   rectangle split parts=2,
-                   rectangle split draw splits=false,
-                   text width=0.95\textwidth]
-                   
-\tikzstyle{beamer block rule}=[fill=saphierblau!66!white, 
-                    path fading=east, 
-                    text width=0.6\textwidth, 
-                    minimum height=0.5pt, 
-                    inner sep=0pt, 
-                    anchor=center, 
-                    xshift=7pt, 
-                    yshift=0.35em, 
-                    rounded corners=0.5pt,
-                    anchor=west]
-                    \begin{tikzpicture}
-    \node[beamer block] (block) \bgroup
-    \bfseries \insertblocktitle
-    \nodepart{two} 
-    \begin{minipage}{\textwidth}
-    \vspace{-0.3em}
+  \par\vskip\medskipamount%
+  \begin{beamercolorbox}[colsep*=.75ex]{block title example}
+    \usebeamerfont*{block title example}\insertblocktitle%
+  \end{beamercolorbox}%
+  {\parskip0pt\par}%
+  \ifbeamercolorempty[bg]{block title example}
+  {}
+  {\ifbeamercolorempty[bg]{block body example}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body example}%
+  \begin{beamercolorbox}[colsep*=.75ex,vmode]{block body example}%
+    \ifbeamercolorempty[bg]{block body example}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
 }
 \defbeamertemplate*{block example end}{Rub}
-{    \end{minipage}
-    \egroup;
-    \node[beamer block rule] at (block.text split west) {};
-\end{tikzpicture}
-\vskip\smallskipamount
-}
-
-
+{\end{beamercolorbox}\vskip\smallskipamount}
 
 % Theorems
 %\defbeamertemplateparent{theorems}{theorem begin,theorem end}
