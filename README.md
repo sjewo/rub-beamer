@@ -16,7 +16,7 @@ Einbindung in eine Beamer-Präsentation
 ======================================
 
 Die Vorlage kann einfach über den Befehl `\usetheme[optionen]{Rub}` eingebunden werden. 
-*Das RUB-Logo (logo.pdf) und die Wortmarke (wortmarke.pdf) liegen noch nicht im Repository, da dies noch von der Pressestelle freigegebn werden muss.*
+*Das RUB-Logo (logo.pdf) und die Wortmarke (wortmarke.pdf) liegen nicht im Repository, da diese nur im Intranet der RUB verfügbar sind.*
 
 Es gibt drei Varianten für die Titelseite, die über ein optionales Argument ausgewählt werden können:
 * alternativetitlepage=bild
