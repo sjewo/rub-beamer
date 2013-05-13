@@ -48,21 +48,6 @@
 % Alle Strukturierungselemente wie Aufzählungzeichen in saphierblau
 \usecolortheme[named=saphierblau]{structure}
 
-% Farben für Handouts
-\mode<handout>
-% Bei Handout Hintergrundfarbe auf weiß setzten
-\setbeamercolor*{normal text}{fg=saphierblau,bg=white} %Hintergrund
-\setbeamercolor*{Location bar}{fg=saphierblau,bg=white} %Fußzeile
-\setbeamercolor*{block title}{fg=saphierblau,bg=white}
-\setbeamercolor*{block body}{bg=white,fg=saphierblau}
-\setbeamercolor*{block title alerted}{bg=alertred, fg=white}
-\setbeamercolor*{block body alerted}{bg=alertred!15,fg=saphierblau}
-\setbeamercolor*{block title example}{bg=gelbgruen, fg=white}
-\setbeamercolor*{block body example}{bg=gelbgruen!15,fg=saphierblau}
-
-\mode
-<all>
-
 % Farben für den „aufgeräumten Modus“
 \ifbeamer@empty
 \setbeamercolor{normal text}{fg=saphierblau,bg=white}
@@ -74,3 +59,22 @@
 \setbeamercolor*{section in head/foot}{fg=saphierblau,bg=lichtgrau} 
 \fi
 
+% Farben für Handouts
+\mode<handout>
+% Bei Handout Hintergrundfarbe auf weiß setzten
+\setbeamercolor*{kopf}{fg=black, bg=white}
+\setbeamercolor*{titlegraphic}{fg=saphierblau, bg=white}
+\setbeamercolor{normal text}{fg=saphierblau,bg=white}
+\setbeamercolor*{Location bar}{fg=saphierblau,bg=white}
+\setbeamercolor*{section in head/foot}{fg=saphierblau,bg=white} 
+\setbeamercolor*{normal text}{fg=saphierblau,bg=white} %Hintergrund
+\setbeamercolor*{Location bar}{fg=saphierblau,bg=white} %Fußzeile
+\setbeamercolor*{block title}{fg=saphierblau,bg=white}
+\setbeamercolor*{block body}{bg=white,fg=saphierblau}
+\setbeamercolor*{block title alerted}{bg=alertred, fg=white}
+\setbeamercolor*{block body alerted}{bg=alertred!15,fg=saphierblau}
+\setbeamercolor*{block title example}{bg=gelbgruen, fg=white}
+\setbeamercolor*{block body example}{bg=gelbgruen!15,fg=saphierblau}
+
+\mode
+<all>
