@@ -84,7 +84,7 @@
     % Node mit dem weißen Hintergrund
     \node[anchor=north west, inner sep=0pt]  at (current page.north west) 
          {\begin{tikzpicture}
-            \draw[style={white, line width=0pt, fill=white}] (0,0) rectangle (11.5cm,8.2cm);
+            \draw[style={white, line width=0pt, fill=white}] (0,0) rectangle (0.90\paperwidth,0.9\paperheight);%8.2cm);
           \end{tikzpicture}};
     % Node mit dem Text
     \node[anchor=north west, inner sep=0pt, xshift=1cm,yshift=-0.5cm]  at (current page.north west) {
@@ -189,7 +189,7 @@
     % Bild im Hintergrund
     \node[anchor=north west, inner sep=0pt, xshift=-2mm]  at (current page.north west) {\TitleImage};
     % Weißer Fläche mit Text
-    \draw[style={white, line width=0pt, fill=white}] (current page.north west) rectangle (0.91\paperwidth,-45mm);
+    \draw[style={white, line width=0pt, fill=white}] (current page.north west) rectangle (0.90\paperwidth,-45mm);
     % Text
     \node[anchor=north west, inner sep=0pt, xshift=.3cm,yshift=-0.5cm]  at (current page.north west) {
         \begin{minipage}{\linewidth}
