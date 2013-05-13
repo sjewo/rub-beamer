@@ -9,8 +9,10 @@ Installation
 
 Der Ordner rub-beamer in den Ordner /tex/latex/ im texmf Verzeichnis des Benutzers kopieren.
 
+Die Vorlage verwendet das Packet `rubfonts2009` von Patrick Happel, welches unter der URL https://noc.rub.de/~jobsanzl/latex/rubtexfonts-latest.tar.gz für Mitglieder der Ruhr-Universität herunterladbar ist.
+
 Wenn die RUB Schriftarten  nicht verwendet werden sollen, kann dies durch das auskommentieren von 
-"\usefonttheme{Rub}" in "tex/latex/rub-beamer/beamerthemerub.sty" erreicht werden.
+"\usefonttheme{rubfonts2009}" in "tex/latex/rub-beamer/beamerthemerub.sty" erreicht werden.
 
 Einbindung in eine Beamer-Präsentation
 ======================================
