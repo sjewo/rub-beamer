@@ -89,7 +89,7 @@
     \node[anchor=north west, inner sep=0pt, xshift=1cm,yshift=-0.5cm]  at (current page.north west) {
         \begin{minipage}{11.5cm}
             \begin{beamercolorbox}{title}
-                \pgfuseimage{wortmarkeTitle}\\[1cm]
+		\begin{tiny}\textbf{RUHR-UNIVERSIT{\"A}T}~BOCHUM \end{tiny} \\ [1cm]
                 \usebeamerfont{title}\inserttitle\par%
                 \ifx\insertsubtitle\@empty% Falls kein Untertitel definiert wurde, nichts unternehmen
                 \else%
@@ -138,7 +138,8 @@
       \node[anchor=north west, inner sep=0pt, xshift=7mm,yshift=-55mm]  at (current page.north west) {
         \begin{minipage}{\linewidth}
             \begin{beamercolorbox}{title}
-                \pgfuseimage{wortmarkeTitle}\\[0.3cm]
+%                 \pgfuseimage{wortmarkeTitle}\\[0.3cm]
+		\begin{tiny}\textbf{RUHR-UNIVERSIT{\"A}T}~BOCHUM \end{tiny} \\ [0.3cm]
                 \usebeamerfont{title}\inserttitle\par%
                 \ifx\insertsubtitle\@empty%
                 \else%
@@ -148,19 +149,19 @@
             \end{beamercolorbox}%
             \vskip8pt%
             \begin{beamercolorbox}{date}
-                \usebeamerfont{date}\insertdate
+                \noindent\usebeamerfont{date}\insertdate
             \end{beamercolorbox}
             \vskip1em\par    
             \ifnum\sponsor=0 % Prüfen ob es ein Sponsorlogo gibt
-	        \begin{minipage}{\linewidth} % wenn nein, ganze Zeile nutzen
+	        \noindent\begin{minipage}{\linewidth} % wenn nein, ganze Zeile nutzen
             \else 
             \begin{minipage}{8cm}         % wenn ja, Platz fürs Logo lassen
             \fi
-            \begin{beamercolorbox}[sep=-1pt]{institute}
-                \usebeamerfont{institute}\insertinstitute
+            \begin{beamercolorbox}[sep=0pt]{institute}
+                \noindent\usebeamerfont{institute}\insertinstitute
             \end{beamercolorbox}
             \begin{beamercolorbox}{author}
-                \usebeamerfont{author}\insertauthor
+                \noindent\usebeamerfont{author}\insertauthor
             \end{beamercolorbox}
             \end{minipage}
             \vfill
@@ -192,7 +193,8 @@
     \node[anchor=north west, inner sep=0pt, xshift=.3cm,yshift=-0.5cm]  at (current page.north west) {
         \begin{minipage}{\linewidth}
             \begin{beamercolorbox}{title}
-                \pgfuseimage{wortmarkeTitle}\\[0.3cm]
+%                 \pgfuseimage{wortmarkeTitle}\\[0.3cm]
+		\begin{tiny}\textbf{RUHR-UNIVERSIT{\"A}T}~BOCHUM \end{tiny}\\ [0.3cm]
                 \usebeamerfont{title}\inserttitle\par%
                     \ifx\insertsubtitle\@empty%
                       \else%
@@ -200,8 +202,9 @@
                          {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
                     \fi%
             \end{beamercolorbox}%
-            \begin{beamercolorbox}[sep=8pt]{date}
-                \usebeamerfont{date}\hspace{-0.5em}\insertdate
+            \vskip0.5em\par
+            \begin{beamercolorbox}[sep=0pt]{date}
+                \usebeamerfont{date}\insertdate
             \end{beamercolorbox}
             \vskip1em\par
             \ifnum\sponsor=0 % Prüfen ob es ein Sponsorlogo gibt
@@ -209,7 +212,7 @@
             \else 
             \begin{minipage}{8cm}         % wenn ja, Platz fürs Logo lassen
             \fi
-            \begin{beamercolorbox}[sep=-1pt]{institute}
+            \begin{beamercolorbox}[sep=0pt]{institute}
                 \usebeamerfont{institute}\insertinstitute
             \end{beamercolorbox}
             \begin{beamercolorbox}{author}
@@ -246,7 +249,8 @@
     \node[anchor=north west, inner sep=0pt, xshift=.3cm,yshift=-0.5cm]  at (current page.north west) {
         \begin{minipage}{\linewidth}
             \begin{beamercolorbox}{title}
-                \pgfuseimage{wortmarkeTitle}\\[0.3cm]
+%                 \pgfuseimage{wortmarkeTitle}\\[0.3cm]
+		\begin{tiny}\textbf{RUHR-UNIVERSIT{\"A}T}~BOCHUM \end{tiny} \\ [0.3cm]
                 \usebeamerfont{title}\inserttitle\par%
                     \ifx\insertsubtitle\@empty%
                       \else%
