@@ -26,7 +26,7 @@
 \node[anchor=north west, inner sep=0pt]  at (current page.north west) {
     \begin{tikzpicture}[remember picture,overlay]
     % Wegen der Maße werden die Bilder in der picture Umgebung definiert
-    \pgfdeclareimage[height=0.10\paperheight]{logo}{logo}
+    \pgfdeclareimage[height=0.13\paperheight]{logo}{logo}
     \pgfdeclareimage[width=0.18\paperwidth]{wortmarke}{wortmarke}
     % Weißer Hintergrund für den Frame Title
     \draw[anchor=north west, inner sep=0pt,style={white, line width=0pt, fill=white}] (current page.north west)
@@ -37,7 +37,7 @@
     \else
     \node[anchor=north east,xshift=-0.05\paperwidth, rectangle, inner sep=0pt, yshift=1pt] at (current page.north east) {\pgfuseimage{logo}};
     % Wortmarke oben
-    \node[anchor=west,xshift=0.03\paperwidth,yshift=-0.03\paperheight, rectangle, inner sep=0pt] at (current page.north west) {\pgfuseimage{wortmarke}};
+    \node[anchor=west,xshift=0.03\paperwidth,yshift=-0.03\paperheight, rectangle, inner sep=0pt] at (current page.north west) { \begin{tiny}\textbf{RUHR-UNIVERSIT{\"A}T}~BOCHUM\end{tiny} };
     \fi
     % Node mit dem Text
     \node[anchor=north west,xshift=0.03\paperwidth,yshift=-0.06\paperheight, rectangle, inner sep=0pt] at (current page.north west) {
@@ -51,7 +51,7 @@
           \usebeamerfont*{frametitle}\color{saphierblau}{\textbf{\insertframetitle}}
               \ifx\insertframesubtitle\@empty%
               \else%              
-                  \usebeamerfont*{framesubtitle}\color{saphierblau}{\insertframesubtitle}
+                  \newline\usebeamerfont*{framesubtitle}\color{saphierblau}{\insertframesubtitle}
               \fi% 
          \ifbeamer@section
             \par
@@ -90,6 +90,7 @@
                 \insertshortauthor~$|$~\insertshorttitle~$|$~\insertdate
                 \hfill
                 \insertframenumber%$|$\inserttotalframenumber
+		\hspace*{10pt}
             \end{beamercolorbox}}
     \fi
 }
