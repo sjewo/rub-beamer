@@ -83,7 +83,20 @@
 
 % Tabellenlinien und farbig hinterlegt Tabellenüberschriften
 \RequirePackage{booktabs}
+
 \RequirePackage{colortbl}
+\RequirePackage{etoolbox} %provides patchcmd
+% after package colortbl is loaded
+% http://tex.stackexchange.com/questions/159378/cline-disappears-in-beamer
+\makeatletter
+\patchcmd\@cline
+  {\arrayrulewidth\hfill}% search
+  {\arrayrulewidth\hfill\kern\z@}% replace
+  {}% success
+  {\errmessage{Patching \string\@cline\space failed}}% failure
+\makeatother
+
+
 \RequirePackage{array}
 \arrayrulecolor{saphierblau}
 \newcolumntype{+}{>{\global\let\currentrowstyle\relax}}
