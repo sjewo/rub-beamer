@@ -41,10 +41,11 @@
 % Navigationssymbole ausblenden
 \setbeamertemplate{navigation symbols}{}
 
-% Den deutschen Captiontext abkürzen
+% Den deutschen Captiontext abkürzen und Numerierung einschalten
 \AtBeginDocument{%
   \renewcommand{\figurename}{Abb.}%
   \renewcommand{\tablename}{Tab.}%
+  \setbeamertemplate{caption}[numbered]%
  }
 
 % Kleinere Bildunterschriften
