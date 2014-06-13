@@ -10,7 +10,38 @@
 \ProvidesPackage{beamerfontthemeRub}[27/09/12 19:41:02]
 
 % Schriften aus dem Corporate Design laden
-\RequirePackage{rubfonts2009}
+
+% ToDo: Vielleicht global verfuegbar machen?
+% ifxetexorluatex seen at 
+% http://tex.stackexchange.com/a/47579
+\RequirePackage{ifxetex,ifluatex}
+
+\newif\ifxetexorluatex
+\ifxetex
+  \xetexorluatextrue
+\else
+  \ifluatex
+    \xetexorluatextrue
+  \else
+    \xetexorluatexfalse
+  \fi
+\fi
+
+\ifxetexorluatex
+  \RequirePackage{fontspec}
+  \setmainfont{RubFlama}
+  \setsansfont{RubFlama}
+  \setromanfont{RUB Scala TZ}
+  \ifxetex
+    \RequirePackage[EU1]{fontenc}
+  \else
+    \RequirePackage[EU2]{fontenc}
+  \fi
+\else
+  \RequirePackage{rubfonts2009}
+  \RequirePackage[T1]{fontenc}    % 
+  \RequirePackage[utf8]{inputenc} % ToDo: Möglicherweise unerwünscht.
+\fi
 
 \mode<presentation>
 
