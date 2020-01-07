@@ -124,6 +124,7 @@
 %% Alternativ
 \defbeamertemplate*{title page alternativ}{Rub}
 {   % Beginn der Definition: Alternativ
+\thispagestyle{empty}
 \begin{tikzpicture}[remember picture,overlay]
 % Erste Node: Setzt ganz oben links an, von dem Punkt aus kann dann in der zweiten tikzpicture Umgebung ausgegangen werden
 \node[anchor=north west, inner sep=0pt]  at (current page.north west) {
@@ -181,6 +182,7 @@
 %% Alternativ mit großem Bild
 \defbeamertemplate*{title page bild}{Rub}
 {  % Beginn der Definition: Bild
+\thispagestyle{empty}
 \begin{tikzpicture}[remember picture,overlay]
 % Erste Node: Setzt ganz oben links an, von dem Punkt aus kann dann in der zweiten tikzpicture Umgebung ausgegangen werden
 \node[anchor=north west, inner sep=0pt]  at (current page.north west) {
@@ -239,6 +241,7 @@
 %% Alternativ mit großem Bild/empty (aufgeräumter Modus)
 \defbeamertemplate*{title page bildempty}{Rub}
 {  % Beginn der Definition: Bild
+\thispagestyle{empty}
 \begin{tikzpicture}[remember picture,overlay]
 % Erste Node: Setzt ganz oben links an, von dem Punkt aus kann dann in der zweiten tikzpicture Umgebung ausgegangen werden
 \node[anchor=north west, inner sep=0pt]  at (current page.north west) {
