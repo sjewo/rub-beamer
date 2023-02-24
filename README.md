@@ -14,6 +14,14 @@ Die Vorlage verwendet das Paket `rubfonts2009` von Patrick Happel, welches unter
 Wenn die RUB Schriftarten  nicht verwendet werden sollen, kann dies durch das auskommentieren von 
 "\usefonttheme{rubfonts2009}" in "tex/latex/rub-beamer/beamerthemerub.sty" erreicht werden.
 
+## MacOs und MacTeX
+
+Als Nutzer von MacTeX unter MacOs kann der Ordner für texmf wie folgt gefunden werden:
+
+```bash
+kpsewhich -var-value=TEXMFHOME
+```
+
 Einbindung in eine Beamer-Präsentation
 ======================================
 
